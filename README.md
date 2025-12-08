@@ -1,10 +1,12 @@
-<img alt="Quicker Connect Button: Adds a connect button to the main menu for quickly connecting to servers." src="https://cdn.jamalam.tech/mod-assets/quicker-connect-button-banner.png" />
+# Quicker Connect Button (Fork)
 
-![Screenshot 1](https://cdn.jamalam.tech/mod-assets/quicker-connect-button-screenshot-1.png)
+This is a fork of [Quicker Connect Button](https://github.com/JamCoreModding/quicker-connect-button) updated for **Minecraft 1.21.10**.
 
-![Screenshot 2](https://cdn.jamalam.tech/mod-assets/quicker-connect-button-screenshot-2.png)
+> [!NOTE]
+> This fork has been tested **only on Fabric**. Compatibility with NeoForge is not guaranteed and disabled in this build.
 
-Download on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/quicker-connect-button) or [Modrinth](https://modrinth.com/mod/quicker-connect-button).
+## Download
+You can find the latest releases in the [Releases](https://github.com/CelduinX/quicker-connect-button/releases) tab.
 
 ## Configuration
 
