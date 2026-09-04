@@ -8,9 +8,9 @@
         "Jamalam"
     ],
     "contact": {
-        "homepage": "https://github.com/JamCoreModding/quicker-connect-button",
-        "sources": "https://github.com/JamCoreModding/quicker-connect-button",
-        "issues": "https://github.com/JamCoreModding/quicker-connect-button/issues"
+        "homepage": "https://github.com/CelduinX/quicker-connect-button",
+        "sources": "https://github.com/CelduinX/quicker-connect-button",
+        "issues": "https://github.com/CelduinX/quicker-connect-button/issues"
     },
     "license": "MIT",
     "icon": "assets/quickerconnectbutton/icon.png",
@@ -24,8 +24,9 @@
         "quickerconnectbutton.mixins.json"
     ],
     "depends": {
-        "fabric": ">=${fabric_api_version}",
-        "minecraft": ">=${minecraft_version}",
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": ">=${fabric_api_version}",
+        "minecraft": "~${minecraft_version}",
         "architectury": ">=${architectury_version}",
         "jamlib": ">=${jamlib_version}"
     }

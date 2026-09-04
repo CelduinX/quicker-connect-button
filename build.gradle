@@ -1,13 +1,13 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.11-SNAPSHOT" apply false
+    id "dev.architectury.loom-no-remap" version "1.17.491" apply false
     id "com.github.breadmoirai.github-release" version "2.4.1"
 }
 
 if (System.getenv("GITHUB_TOKEN") != null) {
     githubRelease {
         token(System.getenv("GITHUB_TOKEN"))
-        owner("JamCoreModding")
+        owner("CelduinX")
         repo("quicker-connect-button")
         tagName("${project.version}")
         releaseName("V${project.version}")
@@ -21,7 +21,7 @@ if (System.getenv("GITHUB_TOKEN") != null) {
 }
 
 subprojects {
-    apply plugin: "dev.architectury.loom"
+    apply plugin: "dev.architectury.loom-no-remap"
 
     loom {
         silentMojangMappingsLicense()
@@ -43,7 +43,6 @@ subprojects {
 
     dependencies {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
-        mappings loom.officialMojangMappings()
     }
 }
 
@@ -75,7 +74,7 @@ allprojects {
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
-        options.release = 21
+        options.release = 25
     }
 
     tasks.create("prepareWorkspace") {}

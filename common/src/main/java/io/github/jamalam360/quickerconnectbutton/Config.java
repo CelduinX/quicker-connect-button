@@ -1,9 +1,10 @@
 package io.github.jamalam360.quickerconnectbutton;
 
 import blue.endless.jankson.Comment;
-import io.github.jamalam360.jamlib.config.ConfigExtensions;
-import io.github.jamalam360.jamlib.config.HiddenInGui;
-import io.github.jamalam360.jamlib.config.WithinRange;
+import io.github.jamalam360.jamlib.api.config.ConfigExtensions;
+import io.github.jamalam360.jamlib.api.config.ConfigExtensions.Link;
+import io.github.jamalam360.jamlib.api.config.HiddenInGui;
+import io.github.jamalam360.jamlib.api.config.WithinRange;
 import java.util.List;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.network.chat.Component;
@@ -49,7 +50,7 @@ public class Config implements ConfigExtensions<Config> {
     public List<Link> getLinks() {
         return List.of(
               new Link(Link.DISCORD, "https://discord.jamalam.tech", Component.translatable("config.quickerconnectbutton.discord")),
-              new Link(Link.GITHUB, "https://github.com/JamCoreModding/quicker-connect-button", Component.translatable("config.quickerconnectbutton.github")),
+              new Link(Link.GITHUB, "https://github.com/CelduinX/quicker-connect-button", Component.translatable("config.quickerconnectbutton.github")),
               new Link(Link.GENERIC_LINK, "https://modrinth.com/mod/quicker-connect-button", Component.translatable("config.quickerconnectbutton.modrinth"))
         );
     }

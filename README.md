@@ -1,9 +1,9 @@
 # Quicker Connect Button (Fork)
 
-This is a fork of [Quicker Connect Button](https://github.com/JamCoreModding/quicker-connect-button) updated for **Minecraft 1.21.10**.
+This is a fork of [Quicker Connect Button](https://github.com/JamCoreModding/quicker-connect-button) updated for **Minecraft 26.2** and **Fabric Loader 0.19.5**.
 
 > [!NOTE]
-> This fork has been tested **only on Fabric**. Compatibility with NeoForge is not guaranteed and disabled in this build.
+> This fork is tested **only on Fabric**. Compatibility with NeoForge is not guaranteed and disabled in this build.
 
 ## Download
 You can find the latest releases in the [Releases](https://github.com/CelduinX/quicker-connect-button/releases) tab.

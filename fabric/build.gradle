@@ -3,32 +3,24 @@ plugins {
     id "me.shedaniel.unified-publishing" version "0.1.+"
 }
 
-architectury {
-    platformSetupLoomIde()
-    fabric()
-}
-
 base {
     archivesName = "quickerconnectbutton-fabric"
 }
 
-configurations {
-    common
-    shadowCommon
-    compileClasspath.extendsFrom common
-    runtimeClasspath.extendsFrom common
-    developmentFabric.extendsFrom common
+dependencies {
+    implementation libs.fabric.loader
+    implementation libs.fabric.api
+    implementation libs.architectury.fabric
+    runtimeOnly libs.modmenu
+    implementation libs.jamlib.fabric
+
 }
 
-dependencies {
-    modImplementation libs.fabric.loader
-    modImplementation libs.fabric.api
-    modImplementation libs.architectury.fabric
-    modRuntimeOnly libs.modmenu
-    modImplementation libs.jamlib.fabric
-
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+sourceSets {
+    main {
+        java.srcDir project.file("../common/src/main/java")
+        resources.srcDir project.file("../common/src/main/resources")
+    }
 }
 
 if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_KEY") != null) {
@@ -40,7 +32,7 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
             gameVersions = [project.minecraft_version]
             gameLoaders = ["fabric"]
 
-            mainPublication tasks.remapJar
+            mainPublication tasks.shadowJar
 
             relations {
                 depends {
@@ -76,6 +68,7 @@ processResources {
     filesMatching("fabric.mod.json") {
         expand "version": project.version,
                 "minecraft_version": project.minecraft_version,
+                "fabric_loader_version": libs.versions.fabric.loader.get(),
                 "fabric_api_version": libs.versions.fabric.api.get(),
                 "architectury_version": libs.versions.architectury.get(),
                 "jamlib_version": libs.versions.jamlib.get()
@@ -83,28 +76,14 @@ processResources {
 
     inputs.property "version", project.version
     inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "fabric_loader_version", libs.versions.fabric.loader.get()
     inputs.property "fabric_api_version", libs.versions.fabric.api.get()
     inputs.property "architectury_version", libs.versions.architectury.get()
     inputs.property "jamlib_version", libs.versions.jamlib.get()
 }
 
 shadowJar {
-    exclude "architectury.common.json"
-
-    configurations = [project.configurations.shadowCommon]
-    archiveClassifier = "dev-shadow"
-}
-
-remapJar {
-    injectAccessWidener = true
-    input.set shadowJar.archiveFile
-    dependsOn shadowJar
-}
-
-sourcesJar {
-    def commonSources = project(":common").sourcesJar
-    dependsOn commonSources
-    from commonSources.archiveFile.map { zipTree(it) }
+    archiveClassifier = ""
 }
 
 components.java {

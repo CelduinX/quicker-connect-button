@@ -1,8 +1,8 @@
 package io.github.jamalam360.quickerconnectbutton;
 
 import io.github.jamalam360.jamlib.JamLib;
-import io.github.jamalam360.jamlib.JamLibPlatform;
-import io.github.jamalam360.jamlib.config.ConfigManager;
+import io.github.jamalam360.jamlib.api.platform.Platform;
+import io.github.jamalam360.jamlib.api.config.ConfigManager;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.resources.language.I18n;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ public class QuickerConnectButton {
 	public static final ConfigManager<Config> CONFIG = new ConfigManager<>(MOD_ID, Config.class);
 
 	public static void init() {
-		LOGGER.info("Loading Quicker Connect Button on " + JamLibPlatform.getPlatform().name());
+		LOGGER.info("Loading Quicker Connect Button on " + Platform.getModLoader().name());
 		JamLib.checkForJarRenaming(QuickerConnectButton.class);
 	}
 
