@@ -1,3 +1,8 @@
+## 2.2.4+26.2
+
+- Fix crash during `TitleScreen` mixin transformation on Minecraft 26.2.
+- Update the main-menu injection to use the 26.2 button local variable layout.
+
 ## 2.2.3+26.2
 
 - Port to Minecraft 26.2.

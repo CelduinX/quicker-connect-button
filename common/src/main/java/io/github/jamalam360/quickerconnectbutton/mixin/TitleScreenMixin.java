@@ -5,7 +5,6 @@ import io.github.jamalam360.quickerconnectbutton.Config.ButtonLocation;
 import io.github.jamalam360.quickerconnectbutton.QuickerConnectButton;
 import java.util.Objects;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.ConnectScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
@@ -43,7 +42,7 @@ public class TitleScreenMixin extends Screen {
 
     @Inject(method = "createNormalMenuOptions", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/TitleScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;", ordinal = 1, shift = At.Shift.BEFORE), locals = LocalCapture.CAPTURE_FAILHARD)
     private void quickerconnectbutton$buttonRight(int a, int b, CallbackInfoReturnable<Integer> info,
-            Component multiplayerDisabledReason, boolean multiplayerDisabled, Tooltip multiplayerDisabledTooltip) {
+            Button multiplayerButton) {
         if (QuickerConnectButton.CONFIG.get().enabled()
                 && QuickerConnectButton.CONFIG.get().getButtonLocation() == ButtonLocation.RIGHT) {
             Component text = QuickerConnectButton.CONFIG.get().getButtonText();
@@ -54,8 +53,7 @@ public class TitleScreenMixin extends Screen {
                 ServerData data = QuickerConnectButton.createServerData();
                 ConnectScreen.startConnecting(this, this.minecraft, ServerAddress.parseString(data.ip), data, false,
                         null);
-            }).bounds(this.width / 2 + 104, a + b, width, 20).tooltip(multiplayerDisabledTooltip)
-                    .build()).active = multiplayerDisabled;
+            }).bounds(this.width / 2 + 104, a + b, width, 20).build()).active = multiplayerButton.active;
         }
     }
 
