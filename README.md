@@ -1,42 +1,87 @@
-# Quicker Connect Button (Fork)
+# Quicker Connect Button — 26.2 Fork
 
-This is a fork of [Quicker Connect Button](https://github.com/JamCoreModding/quicker-connect-button) updated for **Minecraft 26.2** and **Fabric Loader 0.19.5**.
+Ein clientseitiger Fabric-Mod für Minecraft 26.2, der einen frei konfigurierbaren Schnellverbindungs-Button im Hauptmenü bereitstellt.
 
-> [!NOTE]
-> This fork is tested **only on Fabric**. Compatibility with NeoForge is not guaranteed and disabled in this build.
+Diese Version wird als eigenständiger Fork von [JamCoreModdings Quicker Connect Button](https://github.com/JamCoreModding/quicker-connect-button) gepflegt und auf aktuelle Minecraft-/Fabric-Versionen angepasst.
 
-## Download
-You can find the latest releases in the [Releases](https://github.com/CelduinX/quicker-connect-button/releases) tab.
+## Funktionen
 
-## Configuration
+- Mit einem Klick zu einem konfigurierten Server verbinden
+- Button rechts neben den normalen Menü-Buttons anzeigen
+- Optional den Einzelspieler-, Mehrspieler- oder Realms-Button ersetzen
+- Eigener Button-Text oder automatische Übersetzung von „Connect“
+- Unterstützung für Server mit Resource Packs: aktivieren, deaktivieren oder nachfragen
+- Konfiguration über Mod Menu oder direkt als JSON5-Datei
 
-The config can either be changed through a GUI (using Mod Menu on Fabric or the config button on Forge), or directly at `config/quickerconnectbutton.json5`. The GUI contains tooltips explaining each option.
+## Kompatibilität
+
+| Komponente | Version |
+| --- | --- |
+| Minecraft | 26.2 |
+| Mod Loader | Fabric Loader 0.19.5 oder neuer |
+| Fabric API | 0.159.0+26.2 oder neuer |
+| Architectury API | 21.0.7 oder neuer |
+| JamLib | 2.3.1+26.2.x oder neuer |
+| Java | 25 oder neuer |
+
+Der Fork wird derzeit ausschließlich für Fabric veröffentlicht und getestet. NeoForge ist in diesem Build deaktiviert.
+
+## Installation
+
+1. Installiere Minecraft 26.2 mit Fabric Loader.
+2. Installiere [Fabric API](https://modrinth.com/mod/fabric-api), [Architectury API](https://modrinth.com/mod/architectury-api) und [JamLib](https://modrinth.com/mod/jamlib).
+3. Lade die aktuelle Datei `quickerconnectbutton-fabric-*.jar` aus den [Releases](https://github.com/CelduinX/quicker-connect-button/releases) herunter.
+4. Lege alle JAR-Dateien in den `mods`-Ordner deiner Minecraft-Installation.
+
+[Mod Menu](https://modrinth.com/mod/modmenu) ist optional und ermöglicht den Zugriff auf die Konfiguration direkt im Spiel.
+
+## Konfiguration
+
+Mit Mod Menu lässt sich die Konfiguration grafisch bearbeiten. Alternativ kann `config/quickerconnectbutton.json5` manuell angepasst werden:
 
 ```json5
 {
-  /* Leave empty to disable the quick connect button
-     - default: \"\"
-  */
-  ip: "localhost",
-  /* - default: 25565
-     - must be between 0.0 and 65535.0
-  */
+  // Leer lassen, um den Schnellverbindungs-Button zu deaktivieren
+  ip: "play.example.net",
+
+  // Port zwischen 0 und 65535
   port: 25565,
-  /* Where to place the connect button
-     - default: RIGHT
-     - must be one of: RIGHT, REPLACE_MULTIPLAYER_BUTTON, REPLACE_SINGLEPLAYER_BUTTON, REPLACE_REALMS_BUTTON
-  */
-  buttonLocation: "REPLACE_MULTIPLAYER_BUTTON",
-  /* The text to display on the button. Leave empty to use "Connect".
-     - default: \"\"
-  */
-  text: "Connect to an Awesome Server",
-  /* What to do if the server has a resource pack.
-     - default: PROMPT
-     - must be one of: ENABLED, DISABLED, PROMPT
-  */
-  resourcePackBehaviour: "ENABLED"
+
+  // RIGHT, REPLACE_MULTIPLAYER_BUTTON, REPLACE_SINGLEPLAYER_BUTTON oder REPLACE_REALMS_BUTTON
+  buttonLocation: "RIGHT",
+
+  // Leer lassen, um den Standardtext „Connect“ zu verwenden
+  text: "",
+
+  // ENABLED, DISABLED oder PROMPT
+  resourcePackBehaviour: "PROMPT"
 }
 ```
 
-[![Rent a server with Bisect Hosting: Use Code jamalam to get 25% off](https://www.bisecthosting.com/partners/custom-banners/e0cc6668-0d29-40ff-9820-4d4f5433198a.webp)](https://bisecthosting.com/jamalam)
+Die Datei wird beim Start automatisch angelegt, sobald die Mod geladen wurde.
+
+## Entwicklung
+
+Voraussetzungen:
+
+- JDK 25
+- Internetzugriff zum Auflösen der Gradle- und Minecraft-Abhängigkeiten
+
+Fabric-JAR bauen:
+
+```powershell
+./gradlew.bat :fabric:build
+```
+
+Die fertigen Dateien liegen anschließend in `fabric/build/libs/`.
+
+## Links
+
+- [Releases](https://github.com/CelduinX/quicker-connect-button/releases)
+- [Issues](https://github.com/CelduinX/quicker-connect-button/issues)
+- [Quellcode](https://github.com/CelduinX/quicker-connect-button)
+- [Originalprojekt](https://github.com/JamCoreModding/quicker-connect-button)
+
+## Credits und Lizenz
+
+Die ursprüngliche Mod stammt von [JamCoreModding](https://github.com/JamCoreModding). Dieser Fork steht weiterhin unter der [MIT-Lizenz](LICENSE).
