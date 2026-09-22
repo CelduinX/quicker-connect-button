@@ -1,19 +1,19 @@
 [versions]
 # https://modrinth.com/mod/architectury-api/versions
-architectury = "21.0.7"
+architectury = "22.0.2"
 
 # https://projects.neoforged.net/neoforged/neoforge
 neoforge = "21.0.43-beta"
 
 # https://fabricmc.net/develop
 fabric-loader = "0.19.5"
-fabric-api = "0.159.0+26.2"
+fabric-api = "0.161.0+26.3"
 
 # https://maven.jamalam.tech/#/releases
-jamlib = "2.3.1+26.2.x"
+jamlib = "2.3.1+26.3.x"
 
 # https://modrinth.com/mod/modmenu/versions
-modmenu = "20.0.0"
+modmenu = "21.0.0-beta.1"
 
 [libraries]
 architectury-common = { module = "dev.architectury:architectury", version.ref = "architectury" }

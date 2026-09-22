@@ -1,6 +1,6 @@
-# Quicker Connect Button — 26.2 Fork
+# Quicker Connect Button — 26.3 Fork
 
-Ein clientseitiger Fabric-Mod für Minecraft 26.2, der einen frei konfigurierbaren Schnellverbindungs-Button im Hauptmenü bereitstellt.
+Ein clientseitiger Fabric-Mod für Minecraft 26.3, der einen frei konfigurierbaren Schnellverbindungs-Button im Hauptmenü bereitstellt.
 
 Diese Version wird als eigenständiger Fork von [JamCoreModdings Quicker Connect Button](https://github.com/JamCoreModding/quicker-connect-button) gepflegt und auf aktuelle Minecraft-/Fabric-Versionen angepasst.
 
@@ -17,18 +17,18 @@ Diese Version wird als eigenständiger Fork von [JamCoreModdings Quicker Connect
 
 | Komponente | Version |
 | --- | --- |
-| Minecraft | 26.2 |
+| Minecraft | 26.3 |
 | Mod Loader | Fabric Loader 0.19.5 oder neuer |
-| Fabric API | 0.159.0+26.2 oder neuer |
-| Architectury API | 21.0.7 oder neuer |
-| JamLib | 2.3.1+26.2.x oder neuer |
+| Fabric API | 0.161.0+26.3 oder neuer |
+| Architectury API | 22.0.2 oder neuer |
+| JamLib | 2.3.1+26.3.x oder neuer |
 | Java | 25 oder neuer |
 
 Der Fork wird derzeit ausschließlich für Fabric veröffentlicht und getestet. NeoForge ist in diesem Build deaktiviert.
 
 ## Installation
 
-1. Installiere Minecraft 26.2 mit Fabric Loader.
+1. Installiere Minecraft 26.3 mit Fabric Loader.
 2. Installiere [Fabric API](https://modrinth.com/mod/fabric-api), [Architectury API](https://modrinth.com/mod/architectury-api) und [JamLib](https://modrinth.com/mod/jamlib).
 3. Lade die aktuelle Datei `quickerconnectbutton-fabric-*.jar` aus den [Releases](https://github.com/CelduinX/quicker-connect-button/releases) herunter.
 4. Lege alle JAR-Dateien in den `mods`-Ordner deiner Minecraft-Installation.

@@ -1,3 +1,8 @@
+## 2.2.5+26.3
+
+- Port to Minecraft 26.3 and Fabric Loader 0.19.5.
+- Update Fabric API, Architectury, JamLib, Mod Menu, and Gradle for 26.3.
+
 ## 2.2.4+26.2
 
 - Fix crash during `TitleScreen` mixin transformation on Minecraft 26.2.
